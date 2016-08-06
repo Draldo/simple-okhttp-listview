@@ -13,8 +13,8 @@ public class DetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
 
-        String country = getIntent().getStringExtra("keyvalue");
+        Country country = getIntent().getExtras().getParcelable("keyvalue");
         mTextview = (TextView) findViewById(R.id.country_text);
-        mTextview.setText(country);
+        mTextview.setText(country.printString());
     }
 }

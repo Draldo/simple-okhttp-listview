@@ -84,7 +84,8 @@ public class MainActivity extends AppCompatActivity {
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                         Log.d(TAG, "onItemClick: " + adapter.getItem(i));
                         Intent intent = new Intent(getApplication(), DetailsActivity.class);
-                        intent.putExtra("keyvalue", adapter.getItem(i).toString());
+                        Country pais = countries.get(i);
+                        intent.putExtra("keyvalue", pais);
                         startActivity(intent);
                     }
                 });
